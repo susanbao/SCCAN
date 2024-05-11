@@ -124,6 +124,9 @@ class SemData(Dataset):
             elif self.split == 0:
                 self.sub_list = list(range(6, 21))  # [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
                 self.sub_val_list = list(range(1, 6))  # [1,2,3,4,5]
+            elif self.split == 4:
+                self.sub_list = list(range(1, 21))
+                self.sub_val_list = list(range(1, 21))
 
         elif data_set == 'coco':
             if use_split_coco:

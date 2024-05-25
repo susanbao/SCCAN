@@ -1,0 +1,38 @@
+2024-05-14 09:17:08,613 INFO test_sccan.py line 278 846395] meanIoU---Val result: mIoU 0.8245.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 279 846395] <<<<<<< Novel Results <<<<<<<
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_1 Result: iou 0.8805.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_2 Result: iou 0.3636.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_3 Result: iou 0.8925.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_4 Result: iou 0.7723.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_5 Result: iou 0.8312.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_6 Result: iou 0.9405.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_7 Result: iou 0.8898.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_8 Result: iou 0.9368.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_9 Result: iou 0.6097.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_10 Result: iou 0.9370.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_11 Result: iou 0.7929.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_12 Result: iou 0.9085.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_13 Result: iou 0.8971.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_14 Result: iou 0.8494.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_15 Result: iou 0.8515.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_16 Result: iou 0.6924.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_17 Result: iou 0.9075.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_18 Result: iou 0.8208.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_19 Result: iou 0.9074.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 281 846395] Class_20 Result: iou 0.8093.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 283 846395] FBIoU---Val result: FBIoU 0.9103.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 285 846395] Class_0 Result: iou_f 0.9617.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 285 846395] Class_1 Result: iou_f 0.8590.
+[2024-05-14 09:17:08,613 INFO test_sccan.py line 286 846395] <<<<<<<<<<<<<<<<< End Evaluation <<<<<<<<<<<<<<<<<
+total time: 167.9339, avg inference time: 0.0698, count: 1449
+
+Total running time: 00h 02m 47s
+Seed0: 123
+Seed:  [321]
+mIoU:  [0.8245]
+FBIoU: [0.9103]
+pIoU:  [0.859]
+-------------------------------------------
+Best_Seed_m: 321         Best_Seed_F: 321        Best_Seed_p: 321
+Best_mIoU: 0.8245        Best_FBIoU: 0.9103      Best_pIoU: 0.8590
+Mean_mIoU: 0.8245        Mean_FBIoU: 0.9103      Mean_pIoU: 0.8590

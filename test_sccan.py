@@ -31,6 +31,7 @@ from util.util import AverageMeter, poly_learning_rate, intersectionAndUnionGPU,
     get_logger, get_save_path, \
     is_same_model, fix_bn, sum_list, check_makedirs
 import matplotlib.pyplot as plt
+import ipdb
 
 cv2.ocl.setUseOpenCL(False)
 cv2.setNumThreads(0)
@@ -97,6 +98,7 @@ def get_model(args):
 
 
 def main():
+    # ipdb.set_trace()
     global args, logger, writer
     args = get_parser()
     logger = get_logger()
@@ -171,8 +173,17 @@ def main():
     print('Mean_mIoU: {:.4f} \t Mean_FBIoU: {:.4f} \t Mean_pIoU: {:.4f}'.format(
         mIoU_array.mean(), FBIoU_array.mean(), pIoU_array.mean()))
 
+def np_write(data, file):
+    with open(file, "wb") as outfile:
+        np.save(outfile, data)
+
+def save_output_data(index, output, target):
+    new_output = output.max(1)[1]
+    np_write(new_output.cpu().numpy(), os.path.join("./outputs", f"{index}.npy"))
+    np_write(target.cpu().numpy(), os.path.join("./SCCAN_TARGET", f"{index}.npy"))
 
 def validate(val_loader, model, val_seed, split):
+    # ipdb.set_trace()
     logger.info('>>>>>>>>>>>>>>>> Start Evaluation >>>>>>>>>>>>>>>>')
     batch_time = AverageMeter()
     model_time = AverageMeter()
@@ -184,8 +195,8 @@ def validate(val_loader, model, val_seed, split):
     target_meter = AverageMeter()
 
     if args.data_set == 'pascal':
-        test_num = 1000
-        split_gap = 5
+        test_num = 1449
+        split_gap = 20
     elif args.data_set == 'coco':
         test_num = 4000
         split_gap = 20
@@ -204,7 +215,7 @@ def validate(val_loader, model, val_seed, split):
     assert test_num % args.batch_size_val == 0
     db_epoch = math.ceil(test_num / (len(val_loader) - args.batch_size_val))
     iter_num = 0
-
+    count = 0
     for e in range(db_epoch):
         for i, (input, target, s_input, s_mask, subcls, ori_label) in enumerate(val_loader):
             if iter_num * args.batch_size_val >= test_num:
@@ -221,6 +232,8 @@ def validate(val_loader, model, val_seed, split):
             start_time = time.time()
             output = model(s_x=s_input, s_y=s_mask, x=input, y_m=target, cat_idx=subcls)
             model_time.update(time.time() - start_time)
+            save_output_data(count, output, target)
+            count += 1
 
             if args.ori_resize:
                 longerside = max(ori_label.size(1), ori_label.size(2))

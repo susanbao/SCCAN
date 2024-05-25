@@ -1,3 +1,6 @@
 CUDA_VISIBLE_DEVICES=0 python train_sccan.py --config=config/pascal/pascal_split0_resnet101_5s.yaml
 
-CUDA_VISIBLE_DEVICES=0 python train_sccan.py --config=config/pascal/pascal_split0_resnet101_5s.yaml
+CUDA_VISIBLE_DEVICES=0 python train_sccan.py --config=config/pascal/pascal_split4_resnet101_5s_all.yaml
+
+
+CUDA_VISIBLE_DEVICES=0 python test_sccan.py --config=config/pascal/pascal_split4_resnet101_5s_all.yaml

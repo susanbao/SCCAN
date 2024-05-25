@@ -7,8 +7,8 @@ Data:
 
 Train:
   # Aug
-  train_h: 480
-  train_w: 480
+  train_h: 473
+  train_w: 473
   val_size: 480
   scale_min: 0.9  # minimum random scale
   scale_max: 1.1 # maximum random scale
@@ -35,7 +35,7 @@ Train:
   # Viz & Save & Resume
   print_freq: 10
   save_freq: 10
-  resume: # path to latest checkpoint (default: none, such as epoch_10.pth)  
+  resume: train5_epoch_6_0.7278.pth # path to latest checkpoint (default: none, such as epoch_10.pth)  
   # Validate
   evaluate: True
   SubEpoch_val: True # val at the half epoch
@@ -61,7 +61,7 @@ Method:
   merge_tau: 0.9     # fusion threshold tau
 
 Test_Finetune:
-  weight: train5_epoch_33_0.7155.pth # load weight for fine-tuning or testing (such as train_epoch_107_0.6897.pth)
+  weight: train5_epoch_186_0.8245.pth # load weight for fine-tuning or testing (such as train_epoch_107_0.6897.pth)
   ann_type: 'mask' # mask/bbox
 
 

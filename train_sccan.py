@@ -24,6 +24,7 @@ from torch.utils.data.distributed import DistributedSampler
 from tensorboardX import SummaryWriter
 
 from model import SCCAN
+import ipdb
 
 from util import dataset
 from util import transform, transform_tri, config
@@ -121,6 +122,7 @@ def main_process():
 
 def main():
     global args, logger, writer
+    # ipdb.set_trace()
     args = get_parser()
     logger = get_logger()
     args.distributed = True if torch.cuda.device_count() > 1 else False
@@ -212,7 +214,7 @@ def main():
         if args.distributed:
             train_sampler.set_epoch(epoch)
 
-            # ----------------------  TRAIN  ----------------------
+        # ----------------------  TRAIN  ----------------------
         loss_train, mIoU_train, mAcc_train, allAcc_train = train(train_loader, val_loader, model, optimizer, optimizer_swin, epoch)
 
         if main_process() and args.viz:
@@ -411,8 +413,8 @@ def validate(val_loader, model):
     target_meter = AverageMeter()
 
     if args.data_set == 'pascal':
-        test_num = 1000
-        split_gap = 5
+        test_num = 1449
+        split_gap = 20
     elif args.data_set == 'coco':
         test_num = 4000
         split_gap = 20

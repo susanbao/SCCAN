@@ -8,7 +8,6 @@ dependencies:
   - blas=1.0=mkl
   - ca-certificates=2022.3.18=h06a4308_0
   - certifi=2021.10.8=py38h06a4308_2
-  - cudatoolkit=11.0.221=h6bb024c_0
   - freetype=2.11.0=h70c0345_0
   - giflib=5.2.1=h7b6447c_0
   - intel-openmp=2021.4.0=h06a4308_3561
